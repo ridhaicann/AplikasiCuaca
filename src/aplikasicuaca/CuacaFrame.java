@@ -48,7 +48,7 @@ private void cekCuaca() {
     String kota = cmbKota.getSelectedItem().toString();
 
     try {
-        String apiKey = "ab140def6e48086f9daeee33c1fca3bc";
+        String apiKey = "GUNAKAN API KEY YANG SAYA TARO DI BAWAH LINK ELEARNING";
         String urlString = "https://api.openweathermap.org/data/2.5/weather?q="
                 + kota + "&appid=" + apiKey + "&units=metric";
 
@@ -152,6 +152,30 @@ private void cekCuaca() {
             JOptionPane.showMessageDialog(this, "⚠️ Gagal memuat data: " + e.getMessage());
         }
     }
+    
+    // === HAPUS BARIS TERPILIH ===
+private void hapusBarisTerpilih() {
+    int selectedRow = tblCuaca.getSelectedRow();
+
+    if (selectedRow == -1) {
+        JOptionPane.showMessageDialog(this, 
+                "Pilih baris yang ingin dihapus terlebih dahulu.",
+                "Tidak ada baris dipilih", 
+                JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    int confirm = JOptionPane.showConfirmDialog(this, 
+            "Apakah Anda yakin ingin menghapus baris ini?", 
+            "Konfirmasi Hapus", 
+            JOptionPane.YES_NO_OPTION);
+
+    if (confirm == JOptionPane.YES_OPTION) {
+        model.removeRow(selectedRow);
+        JOptionPane.showMessageDialog(this, "Baris berhasil dihapus.");
+    }
+}
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -173,7 +197,7 @@ private void cekCuaca() {
 
         panelUtama.setBackground(new java.awt.Color(204, 255, 204));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel1.setText("APLIKASI CUACA");
 
         lblPilihKota.setText("Pilih Kota");
@@ -260,7 +284,7 @@ private void cekCuaca() {
                     .addComponent(lblGambarCuaca1))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
