@@ -48,7 +48,7 @@ private void cekCuaca() {
     String kota = cmbKota.getSelectedItem().toString();
 
     try {
-        String apiKey = "GUNAKAN API KEY YANG SAYA TARO DI BAWAH LINK ELEARNING";
+        String apiKey = "GUNAKAN API KEY YANG SAYA TARO DI KOMENTAR";
         String urlString = "https://api.openweathermap.org/data/2.5/weather?q="
                 + kota + "&appid=" + apiKey + "&units=metric";
 
