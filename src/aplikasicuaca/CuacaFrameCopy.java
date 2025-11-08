@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package aplikasicuaca;
 
@@ -8,7 +8,6 @@ package aplikasicuaca;
  *
  * @author USER
  */
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -48,7 +47,7 @@ private void cekCuaca() {
     String kota = cmbKota.getSelectedItem().toString();
 
     try {
-        String apiKey = "GUNAKAN API KEY YANG SAYA TARO DI BAWAH LINK ELEARNING";
+        String apiKey = "GUNAKAN API KEY YANG SAYA TARO DIKOMENTAR PENGUMPULAN";
         String urlString = "https://api.openweathermap.org/data/2.5/weather?q="
                 + kota + "&appid=" + apiKey + "&units=metric";
 
@@ -153,31 +152,9 @@ private void cekCuaca() {
         }
     }
     
-    // === HAPUS BARIS TERPILIH ===
-private void hapusBarisTerpilih() {
-    int selectedRow = tblCuaca.getSelectedRow();
-
-    if (selectedRow == -1) {
-        JOptionPane.showMessageDialog(this, 
-                "Pilih baris yang ingin dihapus terlebih dahulu.",
-                "Tidak ada baris dipilih", 
-                JOptionPane.WARNING_MESSAGE);
-        return;
-    }
-
-    int confirm = JOptionPane.showConfirmDialog(this, 
-            "Apakah Anda yakin ingin menghapus baris ini?", 
-            "Konfirmasi Hapus", 
-            JOptionPane.YES_NO_OPTION);
-
-    if (confirm == JOptionPane.YES_OPTION) {
-        model.removeRow(selectedRow);
-        JOptionPane.showMessageDialog(this, "Baris berhasil dihapus.");
-    }
-}
     
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         panelUtama = new javax.swing.JPanel();
@@ -300,7 +277,7 @@ private void hapusBarisTerpilih() {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
     
     
@@ -337,8 +314,8 @@ private void hapusBarisTerpilih() {
             }
         });
     }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    
+ // Variables declaration - do not modify                     
     private javax.swing.JButton btnCekCuaca;
     private javax.swing.JButton btnKeluar;
     private javax.swing.JButton btnMuatData;
@@ -351,5 +328,6 @@ private void hapusBarisTerpilih() {
     private javax.swing.JLabel lblPilihKota;
     private javax.swing.JPanel panelUtama;
     private javax.swing.JTable tblCuaca;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration   
+    
 }
